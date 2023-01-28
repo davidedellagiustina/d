@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Menu" id="menu">
+    <property name="tearoff">false</property>
+    <child>
+      <object class="tk.Menuitem.Submenu" id="file">
+        <property name="label" translatable="yes">File</property>
+        <property name="tearoff">false</property>
+        <child>
+          <object class="tk.Menuitem.Command" id="process">
+            <property name="accelerator">Crtl+P</property>
+            <property name="command">process</property>
+            <property name="command_id_arg">false</property>
+            <property name="label" translatable="yes">Process ...</property>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Menuitem.Command" id="clear">
+            <property name="accelerator">Crtl+C</property>
+            <property name="command">clear</property>
+            <property name="command_id_arg">false</property>
+            <property name="label" translatable="yes">Clear</property>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Menuitem.Separator" id="separator" />
+        </child>
+        <child>
+          <object class="tk.Menuitem.Command" id="quit">
+            <property name="accelerator">Crtl+Q</property>
+            <property name="command">quit</property>
+            <property name="command_id_arg">false</property>
+            <property name="label" translatable="yes">Quit ...</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="ttk.Frame" id="mainframe">
+    <property name="height">577</property>
+    <property name="width">1018</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="columnspan">1</property>
+      <property name="propagate">False</property>
+      <property name="row">0</property>
+      <property name="rowspan">1</property>
+    </layout>
+    <child>
+      <object class="ttk.Labelframe" id="laberframe_drawing_area">
+        <property name="height">382</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Drawing area</property>
+        <property name="width">366</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">0</property>
+          <property name="rowspan">2</property>
+          <property name="sticky">nw</property>
+          <rows>
+            <row id="0">
+              <property name="pad">0</property>
+            </row>
+          </rows>
+          <columns>
+            <column id="0">
+              <property name="minsize">0</property>
+              <property name="pad">0</property>
+              <property name="weight">0</property>
+            </column>
+          </columns>
+        </layout>
+        <child>
+          <object class="tk.Canvas" id="drawing_area">
+            <property name="background">#ffffff</property>
+            <property name="cursor">crosshair</property>
+            <property name="height">350</property>
+            <property name="highlightbackground">#a0a0a0</property>
+            <property name="highlightthickness">1</property>
+            <property name="takefocus">false</property>
+            <property name="width">350</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="labelframe_preprocessing">
+        <property name="height">324</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Image preprocessing</property>
+        <property name="width">612</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="tk.Canvas" id="stage_1">
+            <property name="background">#ffffff</property>
+            <property name="height">292</property>
+            <property name="highlightbackground">#a0a0a0</property>
+            <property name="highlightthickness">1</property>
+            <property name="takefocus">false</property>
+            <property name="width">292</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label_stage_1">
+            <property name="font">{Source Code Pro Black} 9 {}</property>
+            <property name="foreground">#242728</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Grayscale</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="propagate">False</property>
+              <property name="row">1</property>
+              <property name="sticky">sw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Canvas" id="stage_2">
+            <property name="background">#ffffff</property>
+            <property name="height">140</property>
+            <property name="highlightbackground">#a0a0a0</property>
+            <property name="highlightthickness">1</property>
+            <property name="takefocus">false</property>
+            <property name="width">140</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label_stage_2">
+            <property name="font">{Source Code Pro Black} 8 {}</property>
+            <property name="foreground">#242728</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Colour inversion</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">sw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Canvas" id="stage_3">
+            <property name="background">#ffffff</property>
+            <property name="height">140</property>
+            <property name="highlightbackground">#a0a0a0</property>
+            <property name="highlightthickness">1</property>
+            <property name="takefocus">false</property>
+            <property name="width">140</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label_stage_3">
+            <property name="font">{Source Code Pro Black} 8 {}</property>
+            <property name="foreground">#242728</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Cutting</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">sw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Canvas" id="stage_4">
+            <property name="background">#ffffff</property>
+            <property name="height">140</property>
+            <property name="highlightbackground">#a0a0a0</property>
+            <property name="highlightthickness">1</property>
+            <property name="takefocus">false</property>
+            <property name="width">140</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">1</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label_stage_4">
+            <property name="font">{Source Code Pro Black} 8 {}</property>
+            <property name="foreground">#242728</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Resizing</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="propagate">False</property>
+              <property name="row">1</property>
+              <property name="sticky">sw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Canvas" id="stage_5">
+            <property name="background">#ffffff</property>
+            <property name="height">140</property>
+            <property name="highlightbackground">#a0a0a0</property>
+            <property name="highlightthickness">1</property>
+            <property name="takefocus">false</property>
+            <property name="width">140</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">1</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label_stage_5">
+            <property name="font">{Source Code Pro Black} 8 {}</property>
+            <property name="foreground">#242728</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Centering</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="propagate">False</property>
+              <property name="row">1</property>
+              <property name="sticky">sw</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="labelframe_console">
+        <property name="height">209</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Console</property>
+        <property name="width">612</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">1</property>
+          <property name="rowspan">2</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="console">
+            <property name="background">#242728</property>
+            <property name="cursor">arrow</property>
+            <property name="font">{Source Code Pro Black} 9 {}</property>
+            <property name="foreground">#8AE234</property>
+            <property name="height">11</property>
+            <property name="highlightbackground">#000</property>
+            <property name="highlightthickness">1</property>
+            <property name="padx">10</property>
+            <property name="pady">5</property>
+            <property name="relief">flat</property>
+            <property name="state">disabled</property>
+            <property name="takefocus">false</property>
+            <property name="width">82</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Scrollbar" id="scrollbar_console">
+            <property name="orient">vertical</property>
+            <property name="takefocus">true</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="ipadx">0</property>
+              <property name="ipady">63</property>
+              <property name="padx">6</property>
+              <property name="pady">6</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">ne</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="labelframe_ann_elaboration">
+        <property name="height">151</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Artificial Neural Network elaboration</property>
+        <property name="width">366</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="propagate">False</property>
+          <property name="row">2</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="ann_view">
+            <property name="background">#f0f0f0</property>
+            <property name="cursor">arrow</property>
+            <property name="font">{Source Code Pro Black} 9 {}</property>
+            <property name="foreground">#212121</property>
+            <property name="height">6</property>
+            <property name="highlightthickness">1</property>
+            <property name="padx">10</property>
+            <property name="pady">5</property>
+            <property name="relief">flat</property>
+            <property name="state">disabled</property>
+            <property name="takefocus">false</property>
+            <property name="width">41</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">False</property>
+              <property name="row">0</property>
+              <property name="sticky">nw</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
